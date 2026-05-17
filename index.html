@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mwehehe</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:ital,wght@0,300;0,400;0,700;1,300&family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+
+    <!-- Ambient Layers -->
+    <div class="grain-overlay"></div>
+    <div class="sparkles-container" id="sparkles-container"></div>
+    <div class="petal-container"></div>
+
+    <!-- Section Nav Dots -->
+    <nav class="nav-dots" aria-label="Section navigation">
+        <button class="dot active" data-section="home" title="Home"></button>
+        <button class="dot" data-section="letter" title="Letter"></button>
+        <button class="dot" data-section="memories" title="Memories"></button>
+        <button class="dot" data-section="reasons" title="Reasons"></button>
+        <button class="dot" data-section="music" title="Music"></button>
+        <button class="dot" data-section="final" title="Final"></button>
+    </nav>
+
+    <!-- 1. Opening Screen -->
+    <header id="home" class="section fullscreen">
+        <!-- Decorative background rings -->
+        <div class="hero-ring hero-ring-1"></div>
+        <div class="hero-ring hero-ring-2"></div>
+        <div class="hero-ring hero-ring-3"></div>
+
+        <div class="hero-content">
+            <span class="hero-badge fade-in-text">3 months of us ✦</span>
+            <h1 class="fade-in-text delay-1">Happy 3rd Monthsary<br><em>Lablab!</em></h1>
+            <p class="subtitle fade-in-text delay-2">from nico lablab^3^</p>
+            <button class="glow-btn fade-in-text delay-3" onclick="scrollToSection('letter')">
+                <span class="btn-icon">✉</span> Open Letter
+            </button>
+        </div>
+
+        <div class="scroll-hint fade-in-text delay-3">
+            <span>scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </header>
+
+    <!-- 2. Love Letter Section -->
+    <section id="letter" class="section">
+        <div class="section-label reveal">✦                    ✦</div>
+        <div class="envelope-container reveal">
+            <!-- Wax seal on top -->
+            <div class="wax-seal">❤</div>
+            <div class="envelope">
+                <div class="paper">
+                    <p id="typewriter-text"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Memories Gallery -->
+    <section id="memories" class="section">
+        <div class="section-label reveal">✦ us since we became each other's lablab ✦</div>
+        <h2 class="reveal">Our Memories</h2>
+        <div class="gallery-grid">
+            <div class="polaroid reveal" onclick="openModal('pics/img1.JPEG', 'promise to hold each other\'s hands, i love you lablab')">
+                <div class="polaroid-inner">
+                    <img src="pics/img1.JPEG" alt="Memory 1" loading="lazy">
+                    <div class="polaroid-shine"></div>
+                </div>
+                <div class="caption">02/18/26 — lablab said YESSSS!!! ehe</div>
+                <div class="polaroid-tape"></div>
+            </div>
+
+            <div class="polaroid reveal delay-1" onclick="openModal('pics/img2.JPEG', 'sshheeeeesh, w/ my lablab sa sikrit sb spot sa makatsz frfr')">
+                <div class="polaroid-inner">
+                    <img src="pics/img2.JPEG" alt="Memory 2" loading="lazy">
+                    <div class="polaroid-shine"></div>
+                </div>
+                <div class="caption">03/17/26 — Our First Monthsary date :3</div>
+                <div class="polaroid-tape"></div>
+            </div>
+
+            <div class="polaroid reveal delay-2" onclick="openModal('pics/img3.JPEG', 'NAKUHA NRIN NI LABLAB LITL BABIES NYAAA!! ACCKKKK me was s hapi here fr my lablab hehehheh')">
+                <div class="polaroid-inner">
+                    <img src="pics/img3.JPEG" alt="Memory 3" loading="lazy">
+                    <div class="polaroid-shine"></div>
+                </div>
+                <div class="caption">04/23/26 — mikmik and chuchu aka oink oink aka dos</div>
+                <div class="polaroid-tape"></div>
+            </div>
+
+            <div class="polaroid reveal delay-3" onclick="openModal('pics/img4.JPEG', 'hapi pamilee day, meet da fam, kas tutol ata si tito NAYAHHAHAHAH')">
+                <div class="polaroid-inner">
+                    <img src="pics/img4.JPEG" alt="Memory 4" loading="lazy">
+                    <div class="polaroid-shine"></div>
+                </div>
+                <div class="caption">05/05/26 — habadu tito, w/ lablab ft. arcade gala</div>
+                <div class="polaroid-tape"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="modal" onclick="closeModal()">
+        <div class="modal-backdrop"></div>
+        <button class="close" onclick="closeModal()" aria-label="Close">&times;</button>
+        <div class="modal-frame">
+            <img class="modal-content" id="modal-img" alt="">
+            <div id="modal-caption"></div>
+        </div>
+    </div>
+
+    <!-- 4. Reasons I Love You -->
+    <section id="reasons" class="section">
+        <div class="section-label reveal">✦ from the bottom of my heart frfr ✦</div>
+        <h2 class="reveal">Reazonz I Love My Lablab</h2>
+        <div class="reasons-container reveal">
+            <button class="reason-btn" onclick="showReason(this, 'her smile. YIIIEEEEEE')">
+                <span class="reason-number">01</span>
+                <span class="reason-label">Reazon 1</span>
+                <span class="reason-arrow">→</span>
+            </button>
+            <button class="reason-btn" onclick="showReason(this, 'amoy ng kilikili ugh')">
+                <span class="reason-number">02</span>
+                <span class="reason-label">Reazon 2</span>
+                <span class="reason-arrow">→</span>
+            </button>
+            <button class="reason-btn" onclick="showReason(this, 'zeriouly na, the care and thought you give to me and others, makes me fall inlove w/ you more')">
+                <span class="reason-number">03</span>
+                <span class="reason-label">Reason 3</span>
+                <span class="reason-arrow">→</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- 5. Music Section -->
+    <section id="music" class="section reveal">
+        <div class="section-label">✦ a song from your kabit mleh ✦</div>
+        <div class="music-player glassmorphism">
+            <div class="vinyl-wrapper">
+                <div class="vinyl" id="vinyl-disc">
+                    <div class="vinyl-grooves"></div>
+                    <div class="vinyl-center"></div>
+                </div>
+                <div class="tonearm" id="tonearm"></div>
+            </div>
+            <div class="song-info">
+                <h3>pag bigyan ko muna si Jaehyun dito</h3>
+                <p>de wala de wala</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+            </div>
+            <div class="controls">
+                <audio id="bg-music" src="jaehyun.mp3"></audio>
+                <button id="play-pause-btn" class="glow-btn" onclick="toggleMusic()">
+                    <span id="play-icon">▶ Play</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Final Message Section -->
+    <section id="final" class="section fullscreen">
+        <div class="final-bg-deco"></div>
+        <div class="final-content reveal">
+            <div class="final-hearts">
+                <span>💗</span><span>💖</span><span>💗</span>
+            </div>
+            <h2>I love you always my lablab</h2>
+            <p>Thank you for being my everything now and then.</p>
+            <button class="glow-btn big-btn" onclick="triggerBloom()">
+                hapi motmot lab ^3^
+            </button>
+        </div>
+        <div id="bloom-overlay"></div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
